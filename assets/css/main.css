@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,500,600');
+
+* {
+    font-family: 'Fira Sans', sans-serif;
+    /*  */
+    outline: none !important;
+
+    /*  */
+    -webkit-transition: all 50ms ease-in-out;
+    -moz-transition: all 50ms ease-in-out;
+    -o-transition: all 50ms ease-in-out;
+    transition: all 50ms ease-in-out;
+}
