@@ -46,7 +46,19 @@ class App {
 
 			// set content
 			content = `
-				<div class="col-xs-12 col-sm-4">`+avail+`</div>
+			<div class="col-xs-6">
+				<div class="panel panel-primary">
+				  <div class="panel-heading">
+						<span class="title">`+avail+`</span>
+				    <span class="options-menu"><i class="fal fa-sliders-h fa-2x"></i></span>
+				 </div>
+				 <div class="panel-body">
+				   <div class="row">
+
+					 </div>
+				 </div>
+			  </div>
+		  </div>
 		  `;
 
 
