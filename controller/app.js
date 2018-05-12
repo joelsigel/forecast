@@ -63,10 +63,94 @@ class App {
 					 	<div class="col-xs-4">
 							<h5>May<br><small>2018</small></h5>
 						</div>
-						<div class="col-xs-4">
+						<div class="col-xs-8">
 							<h1>$2,345.32</h1>
 						</div>
 					 </div>
+					 <div class="row">
+					 	<div class="col-xs-4">
+							<div class="utilities auto">
+								<span class="line"></span>
+								<p>Auto</p>
+								<h5>$220.00</h5>
+								<span class="pull-right">
+									<i class="fas fa-car"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="utilities electrical">
+								<span class="line"></span>
+								<p>Electrical</p>
+								<h5>$120.56</h5>
+								<span class="pull-right">
+									<i class="fas fa-bolt"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="utilities internet">
+								<span class="line"></span>
+								<p>Internet</p>
+								<h5>$158.73</h5>
+								<span class="pull-right">
+									<i class="fas fa-wifi"></i>
+								</span>
+							</div>
+						</div>
+					 </div>
+					 <div class="row">
+					 	<div class="col-xs-4">
+							<div class="utilities phone">
+								<span class="line"></span>
+								<p>Phone</p>
+								<h5>$180.00</h5>
+								<span class="pull-right">
+									<i class="fas fa-phone"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="utilities insurance">
+								<span class="line"></span>
+								<p>Insurance</p>
+								<h5>$115.84</h5>
+								<span class="pull-right">
+									<i class="fas fa-shield"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="utilities mortage">
+								<span class="line"></span>
+								<p>Mortage</p>
+								<h5>$1158.56</h5>
+								<span class="pull-right">
+									<i class="fas fa-home"></i>
+								</span>
+							</div>
+						</div>
+					 </div>
+				 </div>
+				 <div class="panel-footer">
+			 	 	<div class="row" align="center">
+						<div class="col-xs-3">
+							<i class="fal fa-archive fa-2x"></i>
+							<br><small>Something</small>
+						</div>
+						<div class="col-xs-3">
+							<i class="fal fa-chart-bar fa-2x active"></i>
+							<br><small class="active">Something</small>
+						</div>
+						<div class="col-xs-3">
+							<i class="fal fa-plus fa-2x"></i>
+							<br><small>Something</small>
+						</div>
+						<div class="col-xs-3">
+							<i class="fal fa-cogs fa-2x"></i>
+							<br><small>Something</small>
+						</div>
+					</div>
 				 </div>
 			  </div>
 		  </div>

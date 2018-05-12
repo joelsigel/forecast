@@ -13,10 +13,14 @@ h1 {
   margin-top: 10px !important;
   font-size: 32px !important;
   font-weight: 300 !important;
+  text-align: right;
 }
 h5 {
   font-weight: 200 !important;
   letter-spacing: 2px;
+}
+h5 small {
+  color: rgba(85,111,140,0.8) !important;
 }
 .panel-primary {
   border: none !important;
@@ -26,23 +30,83 @@ h5 {
   border-bottom: 1px solid rgba(85,111,140,0.3) !important;
 }
 .panel-body {
-    border-top: 1px solid #dfe6e9 !important;
+    padding: 5px;
+    background-color: #34495e;
+    color: #fff;
 }
-
+.panel-footer {
+  min-height: 75px;
+  background-color: #34495e !important;
+  color: rgba(255,255,255, 0.3);
+  border-top: 1px solid rgba(85,111,140,0.3) !important;
+}
+.panel-footer svg {
+  color: rgba(255,255,255, 0.3);
+}
+.panel-footer svg.active {
+  color: #f1c40f;
+}
+.panel-footer small.active {
+  color: #fff;
+}
+.utilities {
+  border: 1px solid #556f8c;
+  background-color: #556f8c;
+  border-radius: 5px;
+  min-height: 100px;
+  padding: 10px;
+  margin-top: 15px;
+}
+.utilities span.line {
+  height: 3px;
+  position: absolute;
+}
+.utilities.auto span.line {
+  background-color: #f1c40f;
+  width: 40%;
+}
+.utilities.electrical span.line {
+  background-color: #D158B4;
+  width: 20%;
+}
+.utilities.internet span.line {
+  background-color: #62B56F;
+  width: 25%;
+}
+.utilities.phone span.line {
+  background-color: #fff;
+  width: 32%;
+}
+.utilities.insurance span.line {
+  background-color: #5890DC;
+  width:20%;
+}
+.utilities.mortage span.line {
+  background-color: #1abc9c;
+  width: 60%;
+}
+.utilities p {
+  margin: 10px 0 5px 0;
+  font-weight: 100;
+}
+.utilities h5 {
+  font-weight: 500 !important;
+    margin-top: 0 !important;
+}
 .options-menu {
-background-color: #f1c40f;
-border-top-right-radius: 3px;
-border-bottom-left-radius: 10px;
-text-align: center;
-cursor: pointer;
--webkit-transition: all 750ms ease-in-out;
--moz-transition: all 750ms ease-in-out;
--o-transition: all 750ms ease-in-out;
-transition: all 750ms ease-in-out;
-padding: 5px;
-position: absolute;
-top: -10px;
-right: 0;
+  background-color: #f1c40f;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 750ms ease-in-out;
+  -moz-transition: all 750ms ease-in-out;
+  -o-transition: all 750ms ease-in-out;
+  transition: all 750ms ease-in-out;
+  padding: 5px;
+  position: absolute;
+  top: -10px;
+  right: 0;
 }
 .options-menu:hover {
   background-color: #EBA844;
