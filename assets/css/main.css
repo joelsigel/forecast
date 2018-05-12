@@ -65,6 +65,10 @@ h5 small {
   min-height: 100px;
   padding: 10px;
   margin-top: 15px;
+  text-transform: capitalize;
+}
+.utilities .cost::before {
+  content: '$';
 }
 .utilities span.line {
   height: 3px;
@@ -72,27 +76,21 @@ h5 small {
 }
 .utilities.auto span.line {
   background-color: #f1c40f;
-  width: 40%;
 }
 .utilities.electrical span.line {
   background-color: #D158B4;
-  width: 20%;
 }
 .utilities.internet span.line {
   background-color: #62B56F;
-  width: 25%;
 }
 .utilities.phone span.line {
-  background-color: #fff;
-  width: 32%;
+  background-color: #e74c3c;
 }
 .utilities.insurance span.line {
   background-color: #5890DC;
-  width:20%;
 }
-.utilities.mortage span.line {
+.utilities.mortgage span.line {
   background-color: #1abc9c;
-  width: 60%;
 }
 .utilities p {
   margin: 10px 0 5px 0;

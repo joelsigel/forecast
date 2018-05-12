@@ -6,7 +6,7 @@
 		},
 		"utilities": {
 			"mortgage": {
-				"name":"mortage",
+				"name":"mortgage",
 				"amount":"1158.56",
 				"duedate":"06/01/2018"
 			},
@@ -29,24 +29,6 @@
 				"name":"insurance",
 				"amount":"115.84",
 				"duedate":"05/15/2018"
-			}
-		}
-	},
-	{
-		"available":true,
-		"bank": {
-			"name": "Something Else"
-		},
-		"utilities": {
-			"auto": {
-				"name":"auto",
-				"amount":"220.00",
-				"duedate":"05/26/2018"
-			},
-			"loc": {
-				"name":"line of credit",
-				"amount":"156.00",
-				"duedate":"05/26/2018"
 			}
 		}
 	}
