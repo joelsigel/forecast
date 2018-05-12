@@ -50,11 +50,8 @@ class App {
 				<div class="panel panel-primary">
 				  <div class="panel-heading">
 						<div class="row">
-							<div class="col-xs-10">
+							<div class="col-xs-12">
 								<span class="title">`+avail+`</span>
-							</div>
-							<div class="col-xs-2">
-				    		<span class="options-menu"><i class="fal fa-sliders-h"></i></span>
 							</div>
 						</div>
 				 </div>

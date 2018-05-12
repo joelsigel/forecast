@@ -29,6 +29,11 @@ h5 small {
   background-color: #34495e !important;
   border-bottom: 1px solid rgba(85,111,140,0.3) !important;
 }
+.panel-heading span.title {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 100;
+}
 .panel-body {
     padding: 5px;
     background-color: #34495e;
@@ -92,22 +97,4 @@ h5 small {
 .utilities h5 {
   font-weight: 500 !important;
     margin-top: 0 !important;
-}
-.options-menu {
-  background-color: #f1c40f;
-  border-top-right-radius: 3px;
-  border-bottom-left-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: all 750ms ease-in-out;
-  -moz-transition: all 750ms ease-in-out;
-  -o-transition: all 750ms ease-in-out;
-  transition: all 750ms ease-in-out;
-  padding: 5px;
-  position: absolute;
-  top: -10px;
-  right: 0;
-}
-.options-menu:hover {
-  background-color: #EBA844;
 }
