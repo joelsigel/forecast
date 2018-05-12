@@ -43,11 +43,15 @@ h5 small {
     background-color: #34495e;
     color: #fff;
 }
+.current svg {
+  color: #f1c40f;
+}
 .panel-footer {
   min-height: 75px;
   background-color: #34495e !important;
   color: rgba(255,255,255, 0.3);
   border-top: 1px solid rgba(85,111,140,0.3) !important;
+  letter-spacing: 2px;
 }
 .panel-footer svg {
   color: rgba(255,255,255, 0.3);
@@ -57,6 +61,12 @@ h5 small {
 }
 .panel-footer small.active {
   color: #fff;
+}
+.footer-btn {
+  cursor: pointer;
+}
+.fa-layers-counter {
+  background-color: #e74c3c;
 }
 .utilities {
   border: 1px solid #556f8c;

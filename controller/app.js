@@ -67,10 +67,10 @@ class App {
 				 <div class="panel-body">
 			   	<div class="row">
 				 		<div class="col-xs-4">
-							<h5>May<br><small>2018</small></h5>
+							<h5 id="month"></h5>
 						</div>
 						<div class="col-xs-8">
-							<h1 class="current"><?php echo $g_data['total-amount']; ?></h1>
+							<h1 class="current"><i class="fal fa-circle-notch fa-spin"></i><?php echo $g_data['total-amount']; ?></h1>
 						</div>
 				 	</div>
 					<section class="utility-drop"></section>
@@ -79,20 +79,31 @@ class App {
 				 <div class="panel-footer">
 			 	 	<div class="row" align="center">
 						<div class="col-xs-3 col-sm-3">
-							<i class="fal fa-archive fa-2x"></i>
-							<br><small>Archive</small>
+							<span class="footer-btn">
+								<span class="fa-layers fa-fw fa-2x">
+									<i class="fas fa-hdd"></i>
+									<span class="fa-layers-counter">2</span>
+								</span>
+								<br><small>Archive</small>
+							</span>
 						</div>
 						<div class="col-xs-3 col-sm-3">
-							<i class="fal fa-chart-bar fa-2x active"></i>
-							<br><small class="active">Analytics</small>
+							<span class="footer-btn">
+								<i class="fal fa-chart-bar fa-2x active"></i>
+								<br><small class="active">Analytics</small>
+							</span>
 						</div>
 						<div class="col-xs-3 col-sm-3">
-							<i class="fal fa-plus fa-2x"></i>
-							<br><small>Add</small>
+							<span class="footer-btn">
+								<i class="fal fa-plus fa-2x"></i>
+								<br><small>Add</small>
+							</span>
 						</div>
 						<div class="col-xs-3 col-sm-3">
-							<i class="fal fa-cogs fa-2x"></i>
-							<br><small>Settings</small>
+							<span class="footer-btn">
+								<i class="fal fa-cogs fa-2x"></i>
+								<br><small>Settings</small>
+							</span>
 						</div>
 					</div>
 				 </div>
@@ -104,13 +115,8 @@ class App {
 			// append data
 			$('.section').append(content);
 
-			// secondary scripts
-			// $(document).ready(function() {
-
-			// });
-
-
 		}
+		// google sheet data pull
 		$('.current').load("pull/data-pull.php").fadeIn();
 	}
 
