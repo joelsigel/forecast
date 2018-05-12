@@ -88,12 +88,49 @@ class App {
 							</div>
 						</div>
 					</section>
+					<section id="add-drop" class="hidden">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="add-palette">
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+									<i class="fas fa-square"></i>
+								</div>
+								<div class="add-details">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fal fa-tags"></i></span>
+										<input id="email" type="text" class="form-control" name="label" placeholder="Label">
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fal fa-credit-card"></i></span>
+										<input id="cost" type="text" class="form-control" name="cost" placeholder="$10.00">
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fal fa-watch"></i></span>
+										<input id="icon" type="text" class="form-control" name="icon" placeholder="fa-watch">
+									</div>
+									<button type="button" class="btn btn-info">Add</button>
+								</div>
+							</div>
+						</div>
+					</section>
 				</div>
 
 				 <div class="panel-footer">
 			 	 	<div class="row" align="center">
 						<div class="col-xs-3">
-							<span id="archive" class="footer-btn" onclick="archive();">
+							<span class="footer-btn" onclick="archive();">
 								<span class="fa-layers fa-fw fa-2x">
 									<i class="fas fa-hdd"></i>
 									<span class="fa-layers-counter">2</span>
@@ -108,7 +145,7 @@ class App {
 							</span>
 						</div>
 						<div class="col-xs-3 col-sm-3">
-							<span class="footer-btn">
+							<span class="footer-btn" onclick="add();">
 								<i class="fal fa-plus fa-2x"></i>
 								<br><small>Add</small>
 							</span>

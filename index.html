@@ -99,9 +99,17 @@ $( document ).ready(function() {
 
     });
 	}
-	function archive(a){
+	function archive(){
 		var details = document.getElementById("archive-drop");
 		if (document.querySelector("#archive-drop").classList.contains("hidden")) {
+			details.className = details.className.replace(/\bhidden\b/g, "open");
+		} else {
+			details.className = details.className.replace(/\bopen\b/g, "hidden");
+		}
+	}
+	function add(){
+		var details = document.getElementById("add-drop");
+		if (document.querySelector("#add-drop").classList.contains("hidden")) {
 			details.className = details.className.replace(/\bhidden\b/g, "open");
 		} else {
 			details.className = details.className.replace(/\bopen\b/g, "hidden");
