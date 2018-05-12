@@ -48,7 +48,7 @@ class App {
 
 			// set content
 			content = `
-			<div class="col-xs-offset-3 col-xs-6">
+			<div class="col-xs-offset-1 col-xs-10">
 				<div class="panel panel-primary">
 				  <div class="panel-heading">
 						<div class="row">
@@ -66,10 +66,10 @@ class App {
 				 </div>
 				 <div class="panel-body">
 			   	<div class="row">
-				 		<div class="col-xs-12 col-sm-4">
+				 		<div class="col-xs-4">
 							<h5>May<br><small>2018</small></h5>
 						</div>
-						<div class="col-xs-12 col-sm-8">
+						<div class="col-xs-8">
 							<h1 class="current"><?php echo $g_data['total-amount']; ?></h1>
 						</div>
 				 	</div>
@@ -78,21 +78,21 @@ class App {
 
 				 <div class="panel-footer">
 			 	 	<div class="row" align="center">
-						<div class="col-xs-12 col-sm-3">
+						<div class="col-xs-3 col-sm-3">
 							<i class="fal fa-archive fa-2x"></i>
-							<br><small>Something</small>
+							<br><small>Archive</small>
 						</div>
-						<div class="col-xs-12 col-sm-3">
+						<div class="col-xs-3 col-sm-3">
 							<i class="fal fa-chart-bar fa-2x active"></i>
-							<br><small class="active">Something</small>
+							<br><small class="active">Analytics</small>
 						</div>
-						<div class="col-xs-12 col-sm-3">
+						<div class="col-xs-3 col-sm-3">
 							<i class="fal fa-plus fa-2x"></i>
-							<br><small>Something</small>
+							<br><small>Add</small>
 						</div>
-						<div class="col-xs-12 col-sm-3">
+						<div class="col-xs-3 col-sm-3">
 							<i class="fal fa-cogs fa-2x"></i>
-							<br><small>Something</small>
+							<br><small>Settings</small>
 						</div>
 					</div>
 				 </div>
@@ -125,6 +125,7 @@ class App {
 			var mortgage = (data.available && data.utilities ? data.utilities.mortgage.name : "");
 			var mortgagecost = (data.available && data.utilities ? data.utilities.mortgage.amount : "");
 
+
 			if (i % 3 === 0) {
 				rowstart =`<div class="row">`;
 			}
@@ -133,7 +134,7 @@ class App {
 			}
 
 			content = `
-			<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-6 col-sm-4">
 			  <div class="utilities `+mortgage+`">
 			    <span class="line"></span>
 			    <p>`+mortgage+`</p>
@@ -143,51 +144,51 @@ class App {
 			    </span>
 			  </div>
 			</div>
-			<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-6 col-sm-4">
 			  <div class="utilities phone">
 			    <span class="line"></span>
 			    <p>Phone</p>
-			    <h5 class="cost">180.00</h5>
+			    <h5 class="cost">196.14</h5>
 			    <span class="pull-right">
 			      <i class="fas fa-phone"></i>
 			    </span>
 			  </div>
 			</div>
-			<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-6 col-sm-4">
 			  <div class="utilities insurance">
 			    <span class="line"></span>
 			    <p>Insurance</p>
-			    <h5 class="cost">115.84</h5>
+			    <h5 class="cost">152.97</h5>
 			    <span class="pull-right">
 			      <i class="fas fa-shield"></i>
 			    </span>
 			  </div>
 			</div>
-			<div class="col-xs-12 col-sm-4">
-			  <div class="utilities auto">
+			<div class="col-xs-6 col-sm-4">
+			  <div class="utilities security">
 			    <span class="line"></span>
-			    <p>Auto</p>
-			    <h5 class="cost">220.00</h5>
+			    <p>Security</p>
+			    <h5 class="cost">55.99</h5>
 			    <span class="pull-right">
-			      <i class="fas fa-car"></i>
+			      <i class="fas fa-lock"></i>
 			    </span>
 			  </div>
 			</div>
-			<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-6 col-sm-4">
 			  <div class="utilities electrical">
 			    <span class="line"></span>
 			    <p>Electrical</p>
-			    <h5 class="cost">120.56</h5>
+			    <h5 class="cost">149.57</h5>
 			    <span class="pull-right">
 			      <i class="fas fa-bolt"></i>
 			    </span>
 			  </div>
 			</div>
-			<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-6 col-sm-4">
 			  <div class="utilities internet">
 			    <span class="line"></span>
 			    <p>Internet</p>
-			    <h5 class="cost">158.73</h5>
+			    <h5 class="cost">166.53</h5>
 			    <span class="pull-right">
 			      <i class="fas fa-wifi"></i>
 			    </span>

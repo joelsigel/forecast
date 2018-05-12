@@ -36,7 +36,6 @@
 <!-- run app -->
 <script>
 	var start = new Start(), app = new App();
-	console.log('start app');
 	start.init();
 </script>
 
@@ -44,7 +43,7 @@
 <script type="text/javascript">
 $( document ).ready(function() {
 
-		//
+		// data loader
 		$(".progress-bar").animate({
 				    width: "100%"
 				}, 200);
@@ -57,27 +56,25 @@ $( document ).ready(function() {
 <!-- functions -->
 <script type="text/javascript">
 
-	// total
 	function total(){
    var total = 0;
-	 var x = 0;
    $('.cost').each(function(i, obj) {
     total += parseInt($(this).text());
-		console.log("each total: " + total);
-		x++;
    });
-   // return total;
-	 line(total,x);
-
+	 line(total);
 	}
-	function line(total,x) {
+	function line(total) {
 		var average = 0;
-		console.log("number of instances: " + x);
-		console.log("final total: " + total);
 		$('.cost').each(function(i, obj) {
 			average = parseInt($(this).text())/total;
-  		console.log(average*100);
-			$(this).siblings('.line').animate({width: average*100+'%'}, 1500);
+			// percent of each
+  		// console.log(average*100);
+			if (average*100 > 70) {
+				average = average*100 - 10;
+			} else {
+				average = average*100 + 10;
+			}
+			$(this).siblings('.line').animate({width: average+'%'}, 1500);
 
     });
 	}

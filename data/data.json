@@ -2,32 +2,32 @@
 	{
 		"available":true,
 		"bank": {
-			"name": "Something"
+			"name": "Checking"
 		},
 		"utilities": {
 			"mortgage": {
 				"name":"mortgage",
-				"amount":"1158.56",
+				"amount":"1700.00",
 				"duedate":"06/01/2018"
 			},
 			"electrical": {
 				"name":"electrical",
-				"amount":"120.00",
+				"amount":"149.57",
 				"duedate":"05/15/2018"
 			},
 			"internet": {
 				"name":"internet",
-				"amount":"158.73",
+				"amount":"166.53",
 				"duedate":"05/15/2018"
 			},
 			"phone": {
 				"name":"phone",
-				"amount":"180.00",
+				"amount":"196.14",
 				"duedate":"05/15/2018"
 			},
 			"insurance": {
 				"name":"insurance",
-				"amount":"115.84",
+				"amount":"152.97",
 				"duedate":"05/15/2018"
 			}
 		}
