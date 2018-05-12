@@ -40,6 +40,7 @@ class App {
 
 			// data sets
 			var avail = (data.available ? 'enabled' : 'disabled');
+			var institute = (data.available && data.bank ? data.bank.name : '')
 
 			// test iteration of array
 			console.log(i);
@@ -51,7 +52,14 @@ class App {
 				  <div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-12">
-								<span class="title">`+avail+`</span>
+								<span class="title">`+institute+`</span>
+							</div>
+							<div class="col-xs-12">
+								<div class="progress">
+									<div class="progress-bar progress-bar-danger" role="progressbar" style="width:0%">
+										Data download complete...
+									</div>
+								</div>
 							</div>
 						</div>
 				 </div>

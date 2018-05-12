@@ -1,8 +1,53 @@
 [
 	{
-		"available":true
+		"available":true,
+		"bank": {
+			"name": "Something"
+		},
+		"utilities": {
+			"mortgage": {
+				"name":"mortage",
+				"amount":"1158.56",
+				"duedate":"06/01/2018"
+			},
+			"electrical": {
+				"name":"electrical",
+				"amount":"120.00",
+				"duedate":"05/15/2018"
+			},
+			"internet": {
+				"name":"internet",
+				"amount":"158.73",
+				"duedate":"05/15/2018"
+			},
+			"phone": {
+				"name":"phone",
+				"amount":"180.00",
+				"duedate":"05/15/2018"
+			},
+			"insurance": {
+				"name":"insurance",
+				"amount":"115.84",
+				"duedate":"05/15/2018"
+			}
+		}
 	},
 	{
-		"available":false
+		"available":true,
+		"bank": {
+			"name": "Something Else"
+		},
+		"utilities": {
+			"auto": {
+				"name":"auto",
+				"amount":"220.00",
+				"duedate":"05/26/2018"
+			},
+			"loc": {
+				"name":"line of credit",
+				"amount":"156.00",
+				"duedate":"05/26/2018"
+			}
+		}
 	}
 ]
