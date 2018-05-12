@@ -99,6 +99,14 @@ $( document ).ready(function() {
 
     });
 	}
+	function archive(a){
+		var details = document.getElementById("archive-drop");
+		if (document.querySelector("#archive-drop").classList.contains("hidden")) {
+			details.className = details.className.replace(/\bhidden\b/g, "open");
+		} else {
+			details.className = details.className.replace(/\bopen\b/g, "hidden");
+		}
+	}
 
 </script>
 

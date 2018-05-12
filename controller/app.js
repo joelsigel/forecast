@@ -74,12 +74,26 @@ class App {
 						</div>
 				 	</div>
 					<section class="utility-drop"></section>
+					<section id="archive-drop" class="hidden">
+						<div class="row">
+							<div class="col-xs-12">
+								<span class="archive-date">
+									<small class="info"><i class="fas fa-hdd"></i> 05/01/2018</small> <small>| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</small>
+								</span>
+							</div>
+							<div class="col-xs-12">
+								<span class="archive-date">
+									<small class="info"><i class="fas fa-hdd"></i> 04/01/2018</small> <small>| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</small>
+								</span>
+							</div>
+						</div>
+					</section>
 				</div>
 
 				 <div class="panel-footer">
 			 	 	<div class="row" align="center">
-						<div class="col-xs-3 col-sm-3">
-							<span class="footer-btn">
+						<div class="col-xs-3">
+							<span id="archive" class="footer-btn" onclick="archive();">
 								<span class="fa-layers fa-fw fa-2x">
 									<i class="fas fa-hdd"></i>
 									<span class="fa-layers-counter">2</span>

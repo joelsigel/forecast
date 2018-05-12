@@ -110,3 +110,27 @@ h5 small {
   font-weight: 500 !important;
     margin-top: 0 !important;
 }
+#archive-drop {
+  border-top: 1px solid rgba(85,111,140,0.3) !important;
+  margin-top: 15px;
+  padding: 15px 0  0 5px;
+}
+#archive-drop .col-xs-12 {
+  margin-bottom: 10px !important;
+}
+#archive-drop .archive-date {
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+#archive-drop .archive-date small {
+  -webkit-transition: all 750ms ease-in-out;
+  -moz-transition: all 750ms ease-in-out;
+  -o-transition: all 750ms ease-in-out;
+  transition: all 750ms ease-in-out;
+}
+#archive-drop .archive-date small.info {
+  cursor: pointer;
+}
+#archive-drop .archive-date small.info:hover {
+  color: #1abc9c;
+}
