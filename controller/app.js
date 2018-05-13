@@ -131,7 +131,7 @@ class App {
 							</span>
 						</div>
 						<div class="col-xs-3 col-sm-3">
-							<span class="footer-btn">
+							<span id="analytics">
 								<i class="fal fa-chart-bar fa-2x active"></i>
 								<br><small class="active">Analytics</small>
 							</span>

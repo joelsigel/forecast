@@ -48,9 +48,18 @@ $( document ).ready(function() {
 				    width: "100%"
 				}, 200);
 		//
+		$('.footer-btn').on('click', function() {
+			$('.footer-btn').not(this).find('small').removeClass('active');
+			$('.footer-btn').not(this).find('svg').removeClass('active');
+			$(this).find('small').toggleClass('active');
+			$(this).find('svg').toggleClass('active');
+		});
+
+		//
 		timestamp();
 		total();
 		palette();
+
 
 });
 </script>

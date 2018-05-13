@@ -65,6 +65,9 @@ h5 small {
 .footer-btn {
   cursor: pointer;
 }
+#analytics {
+  cursor: default !important;
+}
 .fa-layers-counter {
   background-color: #e74c3c;
 }
