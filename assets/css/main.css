@@ -153,45 +153,12 @@ h5 small {
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
-#add-drop .add-palette svg:nth-child(1) {
-  color: #1abc9c;
-}
-#add-drop .add-palette svg:nth-child(2) {
-  color: #16a085;
-}
-#add-drop .add-palette svg:nth-child(3) {
-  color: #f1c40f;
-}
-#add-drop .add-palette svg:nth-child(4) {
-  color: #f39c12;
-}
-#add-drop .add-palette svg:nth-child(5) {
-  color: #3498db;
-}
-#add-drop .add-palette svg:nth-child(6) {
-  color: #2980b9;
-}
-#add-drop .add-palette svg:nth-child(7) {
-  color: #e74c3c;
-}
-#add-drop .add-palette svg:nth-child(8) {
-  color: #c0392b;
-}
-#add-drop .add-palette svg:nth-child(9) {
-  color: #9b59b6;
-}
-#add-drop .add-palette svg:nth-child(10) {
-  color: #8e44ad;
-}
-#add-drop .add-palette svg:nth-child(11) {
-  color: #ecf0f1;
-}
-#add-drop .add-palette svg:nth-child(12) {
-  color: #bdc3c7;
-}
-#add-drop .add-palette svg:nth-child(13) {
-  color: #95a5a6;
-}
-#add-drop .add-palette svg:nth-child(14) {
-  color: #7f8c8d;
+#palette {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  outline: 0 !important;
 }

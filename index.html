@@ -50,6 +50,7 @@ $( document ).ready(function() {
 		//
 		timestamp();
 		total();
+		palette();
 
 });
 </script>
@@ -100,20 +101,33 @@ $( document ).ready(function() {
     });
 	}
 	function archive(){
-		var details = document.getElementById("archive-drop");
+		var archive = document.getElementById("archive-drop");
+		var add = document.getElementById("add-drop");
 		if (document.querySelector("#archive-drop").classList.contains("hidden")) {
-			details.className = details.className.replace(/\bhidden\b/g, "open");
+			archive.className = archive.className.replace(/\bhidden\b/g, "open");
+			add.className = add.className.replace(/\bopen\b/g, "hidden");
 		} else {
-			details.className = details.className.replace(/\bopen\b/g, "hidden");
+			archive.className = archive.className.replace(/\bopen\b/g, "hidden");
 		}
 	}
 	function add(){
-		var details = document.getElementById("add-drop");
+		var add = document.getElementById("add-drop");
+		var archive = document.getElementById("archive-drop");
 		if (document.querySelector("#add-drop").classList.contains("hidden")) {
-			details.className = details.className.replace(/\bhidden\b/g, "open");
+			add.className = add.className.replace(/\bhidden\b/g, "open");
+			archive.className = archive.className.replace(/\bopen\b/g, "hidden");
 		} else {
-			details.className = details.className.replace(/\bopen\b/g, "hidden");
+			add.className = add.className.replace(/\bopen\b/g, "hidden");
 		}
+	}
+	function palette() {
+		var colorWell = document.querySelector("#palette");
+	  colorWell.addEventListener("input", colorVal, true);
+	}
+	function colorVal(event) {
+		$("#palette").attr('value', event.target.value);
+		$("#color").attr('placeholder', event.target.value);
+		console.log(event.target.value);
 	}
 
 </script>

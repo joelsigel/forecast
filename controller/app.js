@@ -92,20 +92,12 @@ class App {
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="add-palette">
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
-									<i class="fas fa-square"></i>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<input id="palette" type="color" value="#ff0000">
+										</span>
+										<input id="color" type="text" class="form-control" name="color" placeholder="#ff0000">
+									</div>
 								</div>
 								<div class="add-details">
 									<div class="input-group">
