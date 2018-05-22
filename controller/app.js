@@ -117,6 +117,29 @@ class App {
 							</div>
 						</div>
 					</section>
+					<section id="data-drop" class="hidden">
+						<div class="row">
+							<div class="col-xs-12 col-sm-offset-4 col-sm-4">
+
+
+								<div class="pie-container">
+										<div id="utilities" class="pie"></div>
+										<div id="food" class="pie"></div>
+										<div id="auto" class="pie"></div>
+										<div id="other" class="pie"></div>
+								</div>
+								<div class="stats">
+										<ul>
+												<li data-name="Utilities">Utilities</li>
+												<li data-name="Food">Food</li>
+												<li data-name="Auto">Auto</li>
+												<li data-name="Other">Other</li>
+										</ul>
+								</div>
+
+							</div>
+						</div>
+					</section>
 				</div>
 
 				 <div class="panel-footer">
@@ -143,9 +166,9 @@ class App {
 							</span>
 						</div>
 						<div class="col-xs-3 col-sm-3">
-							<span class="footer-btn">
-								<i class="fal fa-cogs fa-2x"></i>
-								<br><small>Settings</small>
+							<span class="footer-btn" onclick="data();">
+								<i class="fal fa-chart-pie fa-2x"></i>
+								<br><small>Data</small>
 							</span>
 						</div>
 					</div>

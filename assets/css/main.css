@@ -113,7 +113,7 @@ h5 small {
   font-weight: 500 !important;
     margin-top: 0 !important;
 }
-#archive-drop, #add-drop {
+#archive-drop, #add-drop, #data-drop {
   border-top: 1px solid rgba(85,111,140,0.3) !important;
   margin-top: 15px;
   padding: 15px 0  0 5px;
@@ -164,4 +164,106 @@ h5 small {
   width: 20px;
   height: 20px;
   outline: 0 !important;
+}
+
+
+
+#data-drop .col-xs-12.col-sm-offset-4.col-sm-4 {
+  display: -webkit-inline-box;
+}
+
+.pie-container {
+    position: relative;
+    /* float: left; */
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.8);
+}
+
+.pie-container:after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    z-index: 50;
+    width: 50%;
+    height: 50%;
+    color: #38495C;
+    background-color: #38495C;
+    border-radius: 50%;
+    box-shadow: 0px 0px 4px #38495C inset;
+}
+
+.pie {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #AAA;
+    clip: rect(0px, 75px, 150px, 0px);
+    border-radius: 50%;
+}
+
+#utilities {
+    z-index: 10;
+    background-color: #f1c40f;
+    transform: rotate(-20deg);
+}
+
+#food {
+    z-index: 20;
+    background-color: #1abc9c;
+    transform: rotate(160deg);
+}
+
+#auto {
+    z-index: 30;
+    background-color: #e74c3c;
+    transform: rotate(20deg);
+}
+
+#other {
+    z-index: 40;
+    background-color: #9b59b6;
+    transform: rotate(100deg);
+}
+
+.stats {
+    float: left;
+    margin-left: 20px;
+}
+
+.stats ul {
+   list-style: none;
+}
+
+.stats li {
+    position: relative;
+    margin: 10px 0;
+}
+
+.stats li:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: -25px;
+    top: 2px;
+    background-color: #AAA;
+}
+
+.stats li[data-name='Utilities']:before {
+    background-color: #f1c40f;
+}
+
+.stats li[data-name='Food']:before {
+    background-color: #1abc9c;
+}
+
+.stats li[data-name='Auto']:before {
+    background-color: #e74c3c;
+}
+
+.stats li[data-name='Other']:before {
+    background-color: #9b59b6;
 }

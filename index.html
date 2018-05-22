@@ -9,6 +9,7 @@
 
 	<!-- api -->
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/animate.min.css" media="all">
 
 	<!-- scripts -->
 	<script type="text/javascript" src="assets/fontawesome/fontawesome-all.min.js"></script>
@@ -112,9 +113,11 @@ $( document ).ready(function() {
 	function archive(){
 		var archive = document.getElementById("archive-drop");
 		var add = document.getElementById("add-drop");
+		var data = document.getElementById("data-drop");
 		if (document.querySelector("#archive-drop").classList.contains("hidden")) {
 			archive.className = archive.className.replace(/\bhidden\b/g, "open");
 			add.className = add.className.replace(/\bopen\b/g, "hidden");
+			data.className = data.className.replace(/\bopen\b/g, "hidden");
 		} else {
 			archive.className = archive.className.replace(/\bopen\b/g, "hidden");
 		}
@@ -122,11 +125,25 @@ $( document ).ready(function() {
 	function add(){
 		var add = document.getElementById("add-drop");
 		var archive = document.getElementById("archive-drop");
+		var data = document.getElementById("data-drop");
 		if (document.querySelector("#add-drop").classList.contains("hidden")) {
 			add.className = add.className.replace(/\bhidden\b/g, "open");
 			archive.className = archive.className.replace(/\bopen\b/g, "hidden");
+			data.className = data.className.replace(/\bopen\b/g, "hidden");
 		} else {
 			add.className = add.className.replace(/\bopen\b/g, "hidden");
+		}
+	}
+	function data(){
+		var data = document.getElementById("data-drop");
+		var add = document.getElementById("add-drop");
+		var archive = document.getElementById("archive-drop");
+		if (document.querySelector("#data-drop").classList.contains("hidden")) {
+			data.className = data.className.replace(/\bhidden\b/g, "open");
+			add.className = add.className.replace(/\bopen\b/g, "hidden");
+			archive.className = archive.className.replace(/\bopen\b/g, "hidden");
+		} else {
+			data.className = data.className.replace(/\bopen\b/g, "hidden");
 		}
 	}
 	function palette() {
