@@ -24,7 +24,6 @@
 
 <!-- scripts -->
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/main.js"></script>
 
 <!-- api -->
 <script type="text/javascript" src="assets/bootstrap/bootstrap.min.js"></script>
@@ -38,31 +37,6 @@
 <script>
 	var start = new Start(), app = new App();
 	start.init();
-</script>
-
-<!-- load on ready options -->
-<script type="text/javascript">
-$( document ).ready(function() {
-
-		// data loader
-		$(".progress-bar").animate({
-				    width: "100%"
-				}, 200);
-		//
-		$('.footer-btn').on('click', function() {
-			$('.footer-btn').not(this).find('small').removeClass('active');
-			$('.footer-btn').not(this).find('svg').removeClass('active');
-			$(this).find('small').toggleClass('active');
-			$(this).find('svg').toggleClass('active');
-		});
-
-		//
-		timestamp();
-		total();
-		palette();
-
-
-});
 </script>
 
 <!-- functions -->
@@ -118,6 +92,7 @@ $( document ).ready(function() {
 			archive.className = archive.className.replace(/\bhidden\b/g, "open");
 			add.className = add.className.replace(/\bopen\b/g, "hidden");
 			data.className = data.className.replace(/\bopen\b/g, "hidden");
+			$('.chart').empty();
 		} else {
 			archive.className = archive.className.replace(/\bopen\b/g, "hidden");
 		}
@@ -130,6 +105,7 @@ $( document ).ready(function() {
 			add.className = add.className.replace(/\bhidden\b/g, "open");
 			archive.className = archive.className.replace(/\bopen\b/g, "hidden");
 			data.className = data.className.replace(/\bopen\b/g, "hidden");
+			$('.chart').empty();
 		} else {
 			add.className = add.className.replace(/\bopen\b/g, "hidden");
 		}
@@ -140,10 +116,12 @@ $( document ).ready(function() {
 		var archive = document.getElementById("archive-drop");
 		if (document.querySelector("#data-drop").classList.contains("hidden")) {
 			data.className = data.className.replace(/\bhidden\b/g, "open");
+			chart();
 			add.className = add.className.replace(/\bopen\b/g, "hidden");
 			archive.className = archive.className.replace(/\bopen\b/g, "hidden");
 		} else {
 			data.className = data.className.replace(/\bopen\b/g, "hidden");
+			$('.chart').empty();
 		}
 	}
 	function palette() {
@@ -157,5 +135,8 @@ $( document ).ready(function() {
 	}
 
 </script>
+
+<!-- chart -->
+<script type="text/javascript" src="assets/js/chart.js"></script>
 
 </html>

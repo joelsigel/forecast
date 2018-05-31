@@ -96,21 +96,21 @@ class App {
 										<span class="input-group-addon">
 											<input id="palette" type="color" value="#ff0000">
 										</span>
-										<input id="color" type="text" class="form-control" name="color" placeholder="#ff0000">
+										<input disabled id="color" type="text" class="form-control" name="color" placeholder="#ff0000">
 									</div>
 								</div>
 								<div class="add-details">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="fal fa-tags"></i></span>
-										<input id="email" type="text" class="form-control" name="label" placeholder="Label">
+										<input disabled id="email" type="text" class="form-control" name="label" placeholder="Label">
 									</div>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="fal fa-credit-card"></i></span>
-										<input id="cost" type="text" class="form-control" name="cost" placeholder="$10.00">
+										<input disabled id="cost" type="text" class="form-control" name="cost" placeholder="$10.00">
 									</div>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="fal fa-watch"></i></span>
-										<input id="icon" type="text" class="form-control" name="icon" placeholder="fa-watch">
+										<input disabled id="icon" type="text" class="form-control" name="icon" placeholder="fa-watch">
 									</div>
 									<button type="button" class="btn btn-info">Add</button>
 								</div>
@@ -119,24 +119,18 @@ class App {
 					</section>
 					<section id="data-drop" class="hidden">
 						<div class="row">
-							<div class="col-xs-12 col-sm-offset-4 col-sm-4">
-
-
-								<div class="pie-container">
-										<div id="utilities" class="pie"></div>
-										<div id="food" class="pie"></div>
-										<div id="auto" class="pie"></div>
-										<div id="other" class="pie"></div>
+							<div class="col-xs-12 col-sm-6" align="center">
+								<div id="doughnutChart" class="chart"></div>
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<div class="chart-p">
+									<span class="line"></span>
+									<p>Monthly utilities and bills are collected and tallied in the graph. Note that each color corresponds with each category.</p>
 								</div>
-								<div class="stats">
-										<ul>
-												<li data-name="Utilities">Utilities</li>
-												<li data-name="Food">Food</li>
-												<li data-name="Auto">Auto</li>
-												<li data-name="Other">Other</li>
-										</ul>
+								<div class="chart-p">
+									<span class="line"></span>
+									<p><i class="fas fa-exclamation-triangle"></i> Ladipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 								</div>
-
 							</div>
 						</div>
 					</section>
@@ -184,6 +178,30 @@ class App {
 		}
 		// google sheet data pull
 		$('.current').load("pull/data-pull.php").fadeIn();
+
+		// load on ready options
+		$( document ).ready(function() {
+
+				// data loader
+				$(".progress-bar").animate({
+						    width: "100%"
+						}, 200);
+				//
+				$('.footer-btn').on('click', function() {
+					$('.footer-btn').not(this).find('small').removeClass('active');
+					$('.footer-btn').not(this).find('svg').removeClass('active');
+					$(this).find('small').toggleClass('active');
+					$(this).find('svg').toggleClass('active');
+				});
+
+				//
+				timestamp();
+				total();
+				palette();
+
+
+		});
+
 	}
 
 
@@ -210,7 +228,7 @@ class App {
 			  <div class="utilities `+mortgage+`">
 			    <span class="line"></span>
 			    <p>`+mortgage+`</p>
-			    <h5 class="cost">`+mortgagecost+`</h5>
+			    <h5 class="cost" id="`+mortgage+`">`+mortgagecost+`</h5>
 			    <span class="pull-right">
 			      <i class="fas fa-home"></i>
 			    </span>
@@ -220,7 +238,7 @@ class App {
 			  <div class="utilities phone">
 			    <span class="line"></span>
 			    <p>Phone</p>
-			    <h5 class="cost">196.14</h5>
+			    <h5 class="cost" id="phone">196.14</h5>
 			    <span class="pull-right">
 			      <i class="fas fa-phone"></i>
 			    </span>
@@ -230,7 +248,7 @@ class App {
 			  <div class="utilities insurance">
 			    <span class="line"></span>
 			    <p>Insurance</p>
-			    <h5 class="cost">152.97</h5>
+			    <h5 class="cost" id="insurance">152.97</h5>
 			    <span class="pull-right">
 			      <i class="fas fa-shield"></i>
 			    </span>
@@ -240,7 +258,7 @@ class App {
 			  <div class="utilities security">
 			    <span class="line"></span>
 			    <p>Security</p>
-			    <h5 class="cost">55.99</h5>
+			    <h5 class="cost" id="security">55.99</h5>
 			    <span class="pull-right">
 			      <i class="fas fa-lock"></i>
 			    </span>
@@ -250,7 +268,7 @@ class App {
 			  <div class="utilities electrical">
 			    <span class="line"></span>
 			    <p>Electrical</p>
-			    <h5 class="cost">149.57</h5>
+			    <h5 class="cost" id="electrical">149.57</h5>
 			    <span class="pull-right">
 			      <i class="fas fa-bolt"></i>
 			    </span>
@@ -260,7 +278,7 @@ class App {
 			  <div class="utilities internet">
 			    <span class="line"></span>
 			    <p>Internet</p>
-			    <h5 class="cost">166.53</h5>
+			    <h5 class="cost" id="internet">166.53</h5>
 			    <span class="pull-right">
 			      <i class="fas fa-wifi"></i>
 			    </span>

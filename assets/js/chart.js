@@ -1,11 +1,24 @@
+function chart() {
 $(function(){
+  var mortgage = document.getElementById("mortgage");
+  mortgage = mortgage.textContent;
+  var security = document.getElementById("security");
+  security = security.textContent;
+  var phone = document.getElementById("phone");
+  phone = phone.textContent;
+  var electrical = document.getElementById("electrical");
+  electrical = electrical.textContent;
+  var insurance = document.getElementById("insurance");
+  insurance = insurance.textContent;
+  var internet = document.getElementById("internet");
+  internet = internet.textContent;
   $("#doughnutChart").drawDoughnutChart([
-    { title: "Tokyo",         value : 120,  color: "#2C3E50" },
-    { title: "San Francisco", value:  80,   color: "#FC4349" },
-    { title: "New York",      value:  70,   color: "#6DBCDB" },
-    { title: "London",        value : 50,   color: "#F7E248" },
-    { title: "Sydney",        value : 40,   color: "#D7DADB" },
-    { title: "Berlin",        value : 20,   color: "#FFF" }
+    { title: "mortgage",      value : +mortgage,    color: "#1abc9c" },
+    { title: "security",      value:  +security,    color: "#f1c40f" },
+    { title: "phone",         value:  +phone,       color: "#e74c3c" },
+    { title: "electrical",    value : +electrical,  color: "#D158B4" },
+    { title: "insurance",     value : +insurance,   color: "#5890DC" },
+    { title: "internet",      value : +internet,    color: "#62B56F" }
   ]);
 });
 /*!
@@ -30,21 +43,21 @@ $(function(){
       PI = Math.PI,
       settings = $.extend({
         segmentShowStroke : true,
-        segmentStrokeColor : "#0C1013",
+        segmentStrokeColor : "transparent",
         segmentStrokeWidth : 1,
-        baseColor: "rgba(0,0,0,0.5)",
-        baseOffset: 4,
+        baseColor: "rgba(0,0,0,0.3)",
+        baseOffset: 0,
         edgeOffset : 10,//offset from edge of $this
         percentageInnerCutout : 75,
         animation : true,
-        animationSteps : 90,
+        animationSteps : 190,
         animationEasing : "easeInOutExpo",
         animateRotate : true,
         tipOffsetX: -8,
         tipOffsetY: -45,
         tipClass: "doughnutTip",
         summaryClass: "doughnutSummary",
-        summaryTitle: "TOTAL:",
+        // summaryTitle: "Total",
         summaryTitleClass: "doughnutSummaryTitle",
         summaryNumberClass: "doughnutSummaryNumber",
         beforeDraw: function() {  },
@@ -110,7 +123,7 @@ $(function(){
                      "margin-left": -(summarySize / 2) + "px",
                      "margin-top": -(summarySize / 2) + "px"
                    });
-    var $summaryTitle = $('<p class="' + settings.summaryTitleClass + '">' + settings.summaryTitle + '</p>').appendTo($summary);
+    // var $summaryTitle = $('<p class="' + settings.summaryTitleClass + '">' + settings.summaryTitle + '</p>').appendTo($summary);
     var $summaryNumber = $('<p class="' + settings.summaryNumberClass + '"></p>').appendTo($summary).css({opacity: 0});
 
     for (var i = 0, len = data.length; i < len; i++) {
@@ -159,7 +172,7 @@ $(function(){
     };
     function pathMouseEnter(e) {
       var order = $(this).data().order;
-      $tip.text(data[order].title + ": " + data[order].value)
+      $tip.text(data[order].title + ": $" + data[order].value)
           .fadeIn(200);
       settings.onPathEnter.apply($(this),[e,data]);
     }
@@ -213,7 +226,7 @@ $(function(){
     function drawDoughnutText(animationDecimal, segmentTotal) {
       $summaryNumber
         .css({opacity: animationDecimal})
-        .text((segmentTotal * animationDecimal).toFixed(1));
+        .text("$"+(segmentTotal * animationDecimal).toFixed(2));
     }
     function animateFrame(cnt, drawData) {
       var easeAdjustedAnimationPercent =(settings.animation)? CapValue(easingFunction(cnt), null, 0) : 1;
@@ -249,3 +262,4 @@ $(function(){
     return $this;
   };
 })(jQuery);
+};
