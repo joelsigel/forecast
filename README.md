@@ -6,5 +6,9 @@ Shared Google Sheets document.
 [Google Sheets](https://docs.google.com/spreadsheets)
 
 ### Setup
-Update 5/11/2018
+Update 5/31/2018
 ![picture](assets/images/screen.png)
+
+### History
+5/11/2018
+![picture](assets/images/screen-5-11-18.png)
