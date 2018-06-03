@@ -74,17 +74,47 @@ class App {
 						</div>
 				 	</div>
 					<section class="utility-drop"></section>
-					<section id="archive-drop" class="hidden">
+					<section id="debts-drop" class="hidden">
 						<div class="row">
-							<div class="col-xs-12">
-								<span class="archive-date">
-									<small class="info"><i class="fas fa-hdd"></i> 05/01/2018</small> <small>| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</small>
-								</span>
+							<div class="col-xs-6 col-sm-3">
+							  <div class="utilities debt01">
+							    <span class="line"></span>
+							    <p>Credit Card</p>
+							    <h5 class="debtTotal">3526.55</h5>
+							    <span class="pull-right">
+							      <i class="fas fa-credit-card-front"></i>
+							    </span>
+							  </div>
 							</div>
-							<div class="col-xs-12">
-								<span class="archive-date">
-									<small class="info"><i class="fas fa-hdd"></i> 04/01/2018</small> <small>| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</small>
-								</span>
+							<div class="col-xs-6 col-sm-3">
+							  <div class="utilities debt02">
+							    <span class="line"></span>
+							    <p>Other</p>
+							    <h5 class="debtTotal">1500.00</h5>
+							    <span class="pull-right">
+							      <i class="fas fa-credit-card"></i>
+							    </span>
+							  </div>
+							</div>
+							<div class="col-xs-6 col-sm-3">
+							  <div class="utilities debt03">
+							    <span class="line"></span>
+							    <p>Credit Card</p>
+							    <h5 class="debtTotal">553.03</h5>
+							    <span class="pull-right">
+							      <i class="fas fa-credit-card-front"></i>
+							    </span>
+							  </div>
+							</div>
+							<div class="col-xs-6 col-sm-3">
+							  <div class="utilities debt04">
+							    <span class="line"></span>
+							    <p>Line of Credit</p>
+							    <h5 class="debtTotal">4631.50</h5>
+							    <span class="pull-right">
+							      <i class="fas fa-credit-card"></i>
+							    </span>
+							  </div>
 							</div>
 						</div>
 					</section>
@@ -120,7 +150,7 @@ class App {
 					<section id="data-drop" class="hidden">
 						<div class="row">
 							<div class="col-xs-12 col-sm-6" align="center">
-								<div id="doughnutChart" class="chart"></div>
+								<div id="dataChart" class="chart"></div>
 							</div>
 							<div class="col-xs-12 col-sm-6">
 								<div class="chart-p">
@@ -139,12 +169,12 @@ class App {
 				 <div class="panel-footer">
 			 	 	<div class="row" align="center">
 						<div class="col-xs-3">
-							<span class="footer-btn" onclick="archive();">
+							<span class="footer-btn" onclick="debts();">
 								<span class="fa-layers fa-fw fa-2x">
-									<i class="fas fa-hdd"></i>
-									<span class="fa-layers-counter">2</span>
+									<i class="fas fa-credit-card-front"></i>
+									<span class="fa-layers-counter">4</span>
 								</span>
-								<br><small>Archive</small>
+								<br><small>Debts</small>
 							</span>
 						</div>
 						<div class="col-xs-3 col-sm-3">
@@ -197,6 +227,7 @@ class App {
 				//
 				timestamp();
 				total();
+				debt();
 				palette();
 
 

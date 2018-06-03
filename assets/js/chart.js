@@ -1,4 +1,4 @@
-function chart() {
+function dataChart() {
 $(function(){
   var mortgage = document.getElementById("mortgage");
   mortgage = mortgage.textContent;
@@ -12,7 +12,7 @@ $(function(){
   insurance = insurance.textContent;
   var internet = document.getElementById("internet");
   internet = internet.textContent;
-  $("#doughnutChart").drawDoughnutChart([
+  $("#dataChart").drawDoughnutChart([
     { title: "mortgage",      value : +mortgage,    color: "#1abc9c" },
     { title: "security",      value:  +security,    color: "#f1c40f" },
     { title: "phone",         value:  +phone,       color: "#e74c3c" },

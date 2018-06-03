@@ -83,10 +83,27 @@ h5 small {
 .utilities .cost::before {
   content: '$';
 }
+.utilities .debtTotal::before {
+  content: '$';
+}
 .utilities span.line {
   height: 3px;
   position: absolute;
 }
+#debts-drop .utilities.debt01 span.line {
+  background-color: #f78fb3;
+}
+#debts-drop .utilities.debt02 span.line {
+  background-color: #f1c40f;
+}
+#debts-drop .utilities.debt03 span.line {
+  background-color: #e74c3c;
+}
+#debts-drop .utilities.debt04 span.line {
+  background-color: #5890DC;
+}
+
+
 .utilities.security span.line {
   background-color: #f1c40f;
 }
@@ -113,28 +130,32 @@ h5 small {
   font-weight: 500 !important;
     margin-top: 0 !important;
 }
-#archive-drop, #add-drop, #data-drop {
+#debts-drop, #add-drop, #data-drop {
   border-top: 1px solid rgba(85,111,140,0.3) !important;
   margin-top: 15px;
   padding: 15px 0  0 5px;
 }
-#archive-drop .col-xs-12 {
+#debts-drop .col-xs-12 {
   margin-bottom: 10px !important;
 }
-#archive-drop .archive-date {
+#debts-drop .debts-date {
   letter-spacing: 2px;
-  font-weight: 100;
+  font-weight: 200;
+  padding: 2%;
+  border-radius: 5px;
+  background-color: #596E89;
+  margin-bottom: 10px;
 }
-#archive-drop .archive-date small {
+#debts-drop .debts-date small {
   -webkit-transition: all 750ms ease-in-out;
   -moz-transition: all 750ms ease-in-out;
   -o-transition: all 750ms ease-in-out;
   transition: all 750ms ease-in-out;
 }
-#archive-drop .archive-date small.info {
+#debts-drop .debts-date small.info {
   cursor: pointer;
 }
-#archive-drop .archive-date small.info:hover {
+#debts-drop .debts-date small.info:hover {
   color: #1abc9c;
 }
 #add-drop .add-palette {
@@ -244,10 +265,16 @@ h5 small {
 .chart-p p {
   padding: 10%;
 }
-#data-drop span.line {
+#data-drop span.line{
   height: 3px;
   position: absolute;
+  margin: 5% 0 5% 9%;
+}
+.chart-p:nth-child(1) span.line {
   background-color: #f78fb3;
   width: 40%;
-  margin: 5% 0 5% 9%;
+}
+.chart-p:nth-child(2) span.line {
+  background-color: #71C2D4;
+  width: 20%;
 }

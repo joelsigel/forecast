@@ -84,26 +84,51 @@
 
     });
 	}
-	function archive(){
-		var archive = document.getElementById("archive-drop");
+
+	function debt(){
+   var total = 0;
+   $('.debtTotal').each(function(i, obj) {
+    total += parseInt($(this).text());
+		console.log(total);
+   });
+	 debtLine(total);
+	}
+	function debtLine(total) {
+		var average = 0;
+		$('.debtTotal').each(function(i, obj) {
+			average = parseInt($(this).text())/total;
+			// percent of each
+  		// console.log(average*100);
+			if (average*100 > 30) {
+				average = average*100 - 10;
+			} else {
+				average = average*100;
+			}
+			$(this).siblings('.line').animate({width: average+'%'}, 1500);
+
+    });
+	}
+
+	function debts(){
+		var debts = document.getElementById("debts-drop");
 		var add = document.getElementById("add-drop");
 		var data = document.getElementById("data-drop");
-		if (document.querySelector("#archive-drop").classList.contains("hidden")) {
-			archive.className = archive.className.replace(/\bhidden\b/g, "open");
+		if (document.querySelector("#debts-drop").classList.contains("hidden")) {
+			debts.className = debts.className.replace(/\bhidden\b/g, "open");
 			add.className = add.className.replace(/\bopen\b/g, "hidden");
 			data.className = data.className.replace(/\bopen\b/g, "hidden");
 			$('.chart').empty();
 		} else {
-			archive.className = archive.className.replace(/\bopen\b/g, "hidden");
+			debts.className = debts.className.replace(/\bopen\b/g, "hidden");
 		}
 	}
 	function add(){
 		var add = document.getElementById("add-drop");
-		var archive = document.getElementById("archive-drop");
+		var debts = document.getElementById("debts-drop");
 		var data = document.getElementById("data-drop");
 		if (document.querySelector("#add-drop").classList.contains("hidden")) {
 			add.className = add.className.replace(/\bhidden\b/g, "open");
-			archive.className = archive.className.replace(/\bopen\b/g, "hidden");
+			debts.className = debts.className.replace(/\bopen\b/g, "hidden");
 			data.className = data.className.replace(/\bopen\b/g, "hidden");
 			$('.chart').empty();
 		} else {
@@ -113,12 +138,12 @@
 	function data(){
 		var data = document.getElementById("data-drop");
 		var add = document.getElementById("add-drop");
-		var archive = document.getElementById("archive-drop");
+		var debts = document.getElementById("debts-drop");
 		if (document.querySelector("#data-drop").classList.contains("hidden")) {
 			data.className = data.className.replace(/\bhidden\b/g, "open");
-			chart();
+			dataChart();
 			add.className = add.className.replace(/\bopen\b/g, "hidden");
-			archive.className = archive.className.replace(/\bopen\b/g, "hidden");
+			debts.className = debts.className.replace(/\bopen\b/g, "hidden");
 		} else {
 			data.className = data.className.replace(/\bopen\b/g, "hidden");
 			$('.chart').empty();
