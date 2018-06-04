@@ -3,6 +3,11 @@
 <head>
 	<title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+	<meta property="og:image" content="assets/images/favicon.png" />
+	<meta name="description" content="Forecast">
+	<meta name="keywords" content="Forecast">
+	<meta name="author" content="J03L">
 
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
@@ -89,7 +94,7 @@
    var total = 0;
    $('.debtTotal').each(function(i, obj) {
     total += parseInt($(this).text());
-		console.log(total);
+		// console.log(total);
    });
 	 debtLine(total);
 	}
@@ -118,6 +123,7 @@
 			add.className = add.className.replace(/\bopen\b/g, "hidden");
 			data.className = data.className.replace(/\bopen\b/g, "hidden");
 			$('.chart').empty();
+			debtChart();
 		} else {
 			debts.className = debts.className.replace(/\bopen\b/g, "hidden");
 		}
@@ -161,7 +167,10 @@
 
 </script>
 
-<!-- chart -->
-<script type="text/javascript" src="assets/js/chart.js"></script>
+<!-- data chart -->
+<script type="text/javascript" src="assets/js/datachart.js"></script>
+
+<!-- debt chart -->
+<script type="text/javascript" src="assets/js/debtchart.js"></script>
 
 </html>

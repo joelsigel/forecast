@@ -22,6 +22,9 @@ h5 {
 h5 small {
   color: rgba(85,111,140,0.8) !important;
 }
+.buffer {
+  margin: 5% 0;
+}
 .panel-primary {
   border: none !important;
 }
@@ -90,6 +93,16 @@ h5 small {
   height: 3px;
   position: absolute;
 }
+.utilities h4 {
+  font-weight: 200;
+  letter-spacing: 2px;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: none;
+}
+#debts-drop .utilities:nth-child(1), #data-drop .utilities:nth-child(1){
+  min-height: 120px;
+}
 #debts-drop .utilities.debt01 span.line {
   background-color: #f78fb3;
 }
@@ -137,6 +150,9 @@ h5 small {
 }
 #debts-drop .col-xs-12 {
   margin-bottom: 10px !important;
+}
+#debts-drop #debtChart {
+  margin-top: 10px;
 }
 #debts-drop .debts-date {
   letter-spacing: 2px;
@@ -225,7 +241,6 @@ h5 small {
   border-top: 6px solid rgba(0, 0, 0, 0.7);
   line-height: 0;
 }
-
 .doughnutSummary {
   position: absolute;
   top: 50%;
@@ -235,7 +250,6 @@ h5 small {
   text-shadow: 0 -1px 0 #111;
   cursor: default;
 }
-
 .doughnutSummaryTitle {
   position: absolute;
   top: 50%;
@@ -244,37 +258,12 @@ h5 small {
   font-size: 22px;
   letter-spacing: .06em;
 }
-
 .doughnutSummaryNumber {
   position: absolute;
   top: 27%;
   left: 6.5%;
   font-size: 30px;
 }
-
 .chart path:hover {
   opacity: 0.35;
-}
-.chart-p {
-  font-weight: 200;
-  letter-spacing: 2px;
-  border-radius: 5px;
-  background-color: #596E89;
-  margin-bottom: 10px;
-}
-.chart-p p {
-  padding: 10%;
-}
-#data-drop span.line{
-  height: 3px;
-  position: absolute;
-  margin: 5% 0 5% 9%;
-}
-.chart-p:nth-child(1) span.line {
-  background-color: #f78fb3;
-  width: 40%;
-}
-.chart-p:nth-child(2) span.line {
-  background-color: #71C2D4;
-  width: 20%;
 }

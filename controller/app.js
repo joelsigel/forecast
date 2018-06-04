@@ -80,7 +80,7 @@ class App {
 							  <div class="utilities debt01">
 							    <span class="line"></span>
 							    <p>Credit Card</p>
-							    <h5 class="debtTotal">3526.55</h5>
+							    <h5 class="debtTotal" id="debt01">3526.55</h5>
 							    <span class="pull-right">
 							      <i class="fas fa-credit-card-front"></i>
 							    </span>
@@ -90,7 +90,7 @@ class App {
 							  <div class="utilities debt02">
 							    <span class="line"></span>
 							    <p>Other</p>
-							    <h5 class="debtTotal">1500.00</h5>
+							    <h5 class="debtTotal" id="debt02">1500.00</h5>
 							    <span class="pull-right">
 							      <i class="fas fa-credit-card"></i>
 							    </span>
@@ -100,7 +100,7 @@ class App {
 							  <div class="utilities debt03">
 							    <span class="line"></span>
 							    <p>Credit Card</p>
-							    <h5 class="debtTotal">553.03</h5>
+							    <h5 class="debtTotal" id="debt03">553.03</h5>
 							    <span class="pull-right">
 							      <i class="fas fa-credit-card-front"></i>
 							    </span>
@@ -110,11 +110,30 @@ class App {
 							  <div class="utilities debt04">
 							    <span class="line"></span>
 							    <p>Line of Credit</p>
-							    <h5 class="debtTotal">4631.50</h5>
+							    <h5 class="debtTotal" id="debt04">4631.50</h5>
 							    <span class="pull-right">
 							      <i class="fas fa-credit-card"></i>
 							    </span>
 							  </div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 buffer" align="center">
+								<div id="debtChart" class="chart"></div>
+							</div>
+							<div class="col-xs-12 col-sm-6 buffer">
+								<div class="utilities">
+									<h4>Debts are collected and tallied in the graph. Note that each color corresponds with each category of debt.</h4>
+									<span class="pull-right">
+										<i class="fas fa-chart-pie"></i>
+									</span>
+								</div>
+								<div class="utilities">
+									<h4>Please note that all data is updated as debts are reported.</h4>
+									<span class="pull-right">
+										<i class="fas fa-exclamation-triangle"></i>
+									</span>
+								</div>
 							</div>
 						</div>
 					</section>
@@ -153,13 +172,17 @@ class App {
 								<div id="dataChart" class="chart"></div>
 							</div>
 							<div class="col-xs-12 col-sm-6">
-								<div class="chart-p">
-									<span class="line"></span>
-									<p>Monthly utilities and bills are collected and tallied in the graph. Note that each color corresponds with each category.</p>
+								<div class="utilities">
+									<h4>Monthly utilities and bills are collected and tallied in the graph. Note that each color corresponds with each category.</h4>
+									<span class="pull-right">
+										<i class="fas fa-chart-pie"></i>
+									</span>
 								</div>
-								<div class="chart-p">
-									<span class="line"></span>
-									<p><i class="fas fa-exclamation-triangle"></i> Ladipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<div class="utilities">
+									<h4>Please note that all data is updated as bills become available.</h4>
+									<span class="pull-right">
+										<i class="fas fa-exclamation-triangle"></i>
+									</span>
 								</div>
 							</div>
 						</div>
