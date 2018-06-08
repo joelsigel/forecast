@@ -12,7 +12,12 @@
 			},
 			"electrical": {
 				"name":"electrical",
-				"amount":"149.57",
+				"amount":"224.72",
+				"duedate":"05/15/2018"
+			},
+			"security": {
+				"name":"security",
+				"amount":"55.99",
 				"duedate":"05/15/2018"
 			},
 			"internet": {
@@ -30,6 +35,24 @@
 				"amount":"152.97",
 				"duedate":"05/15/2018"
 			}
+		},
+		"debts": {
+			"debt01": {
+				"name":"credit card",
+				"short":"debt01",
+				"amount":"3536.55"
+			},
+			"debt02": {
+				"name":"other",
+				"short":"debt02",
+				"amount":"1500.00"
+			},
+			"debt03": {
+				"name":"credit card",
+				"short":"debt03",
+				"amount":"668.37"
+			}
 		}
+
 	}
 ]

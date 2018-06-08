@@ -104,16 +104,13 @@ h5 small {
   min-height: 120px;
 }
 #debts-drop .utilities.debt01 span.line {
-  background-color: #f78fb3;
+  background-color: #429BB8;
 }
 #debts-drop .utilities.debt02 span.line {
-  background-color: #f1c40f;
+  background-color: #8DD0CB;
 }
 #debts-drop .utilities.debt03 span.line {
-  background-color: #e74c3c;
-}
-#debts-drop .utilities.debt04 span.line {
-  background-color: #5890DC;
+  background-color: #ED667E;
 }
 
 

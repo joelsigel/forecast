@@ -43,6 +43,18 @@ class App {
 			var avail = (data.available ? 'enabled' : 'disabled');
 			var institute = (data.available && data.bank ? data.bank.name : '');
 
+
+			// debts
+			var debt01name = (data.available && data.debts ? data.debts.debt01.name : "");
+			var debt01short = (data.available && data.debts ? data.debts.debt01.short : "");
+			var debt01amount = (data.available && data.debts ? data.debts.debt01.amount : "");
+			var debt02name = (data.available && data.debts ? data.debts.debt02.name : "");
+			var debt02short = (data.available && data.debts ? data.debts.debt02.short : "");
+			var debt02amount = (data.available && data.debts ? data.debts.debt02.amount : "");
+			var debt03name = (data.available && data.debts ? data.debts.debt03.name : "");
+			var debt03short = (data.available && data.debts ? data.debts.debt03.short : "");
+			var debt03amount = (data.available && data.debts ? data.debts.debt03.amount : "");
+
 			// test iteration of array
 			// console.log(i);
 
@@ -76,43 +88,33 @@ class App {
 					<section class="utility-drop"></section>
 					<section id="debts-drop" class="hidden">
 						<div class="row">
-							<div class="col-xs-6 col-sm-3">
-							  <div class="utilities debt01">
+							<div class="col-xs-6 col-sm-4">
+							  <div class="utilities `+debt01short+`">
 							    <span class="line"></span>
-							    <p>Credit Card</p>
-							    <h5 class="debtTotal" id="debt01">3526.55</h5>
+							    <p>`+debt01name+`</p>
+							    <h5 class="debtTotal" id="`+debt01short+`">`+debt01amount+`</h5>
 							    <span class="pull-right">
 							      <i class="fas fa-credit-card-front"></i>
 							    </span>
 							  </div>
 							</div>
-							<div class="col-xs-6 col-sm-3">
-							  <div class="utilities debt02">
-							    <span class="line"></span>
-							    <p>Other</p>
-							    <h5 class="debtTotal" id="debt02">1500.00</h5>
+							<div class="col-xs-6 col-sm-4">
+							<div class="utilities `+debt02short+`">
+								<span class="line"></span>
+								<p>`+debt02name+`</p>
+								<h5 class="debtTotal" id="`+debt02short+`">`+debt02amount+`</h5>
 							    <span class="pull-right">
 							      <i class="fas fa-credit-card"></i>
 							    </span>
 							  </div>
 							</div>
-							<div class="col-xs-6 col-sm-3">
-							  <div class="utilities debt03">
-							    <span class="line"></span>
-							    <p>Credit Card</p>
-							    <h5 class="debtTotal" id="debt03">553.03</h5>
+							<div class="col-xs-6 col-sm-4">
+							<div class="utilities `+debt03short+`">
+								<span class="line"></span>
+								<p>`+debt03name+`</p>
+								<h5 class="debtTotal" id="`+debt03short+`">`+debt03amount+`</h5>
 							    <span class="pull-right">
 							      <i class="fas fa-credit-card-front"></i>
-							    </span>
-							  </div>
-							</div>
-							<div class="col-xs-6 col-sm-3">
-							  <div class="utilities debt04">
-							    <span class="line"></span>
-							    <p>Line of Credit</p>
-							    <h5 class="debtTotal" id="debt04">4631.50</h5>
-							    <span class="pull-right">
-							      <i class="fas fa-credit-card"></i>
 							    </span>
 							  </div>
 							</div>
@@ -123,7 +125,7 @@ class App {
 							</div>
 							<div class="col-xs-12 col-sm-6 buffer">
 								<div class="utilities">
-									<h4>Debts are collected and tallied in the graph. Note that each color corresponds with each category of debt.</h4>
+									<h4>Note that each color corresponds with each category of debt.</h4>
 									<span class="pull-right">
 										<i class="fas fa-chart-pie"></i>
 									</span>
@@ -173,13 +175,13 @@ class App {
 							</div>
 							<div class="col-xs-12 col-sm-6">
 								<div class="utilities">
-									<h4>Monthly utilities and bills are collected and tallied in the graph. Note that each color corresponds with each category.</h4>
+									<h4>Note that each color corresponds with each category.</h4>
 									<span class="pull-right">
 										<i class="fas fa-chart-pie"></i>
 									</span>
 								</div>
 								<div class="utilities">
-									<h4>Please note that all data is updated as bills become available.</h4>
+									<h4>Please note that all data is updated as bills are reported.</h4>
 									<span class="pull-right">
 										<i class="fas fa-exclamation-triangle"></i>
 									</span>
@@ -195,7 +197,7 @@ class App {
 							<span class="footer-btn" onclick="debts();">
 								<span class="fa-layers fa-fw fa-2x">
 									<i class="fas fa-credit-card-front"></i>
-									<span class="fa-layers-counter">4</span>
+									<span class="fa-layers-counter"></span>
 								</span>
 								<br><small>Debts</small>
 							</span>
@@ -235,6 +237,10 @@ class App {
 		// load on ready options
 		$( document ).ready(function() {
 
+				// debt counter
+				var debtcount = $('.debtTotal').length;
+				$('.fa-layers-counter').append(debtcount);
+
 				// data loader
 				$(".progress-bar").animate({
 						    width: "100%"
@@ -247,11 +253,21 @@ class App {
 					$(this).find('svg').toggleClass('active');
 				});
 
-				//
-				timestamp();
-				total();
-				debt();
-				palette();
+				// timestamp
+				var time = new Time();
+				time.init();
+
+				// utilities
+				var utilities = new Utilities();
+				utilities.init();
+
+				// debts
+				var debts = new Debts();
+				debts.init();
+
+				// palette
+				var palette = new Palette();
+				palette.init();
 
 
 		});
@@ -262,92 +278,90 @@ class App {
 	// load utilities
 	loadUtilities(json) {
 		for (var i=0; i < Object.keys(json).length; i++) {
-			var data, rowstart, content, rowend;
+			var data, content;
 			data = json[i];
 
-			//
+			// bills
 			var mortgage = (data.available && data.utilities ? data.utilities.mortgage.name : "");
 			var mortgagecost = (data.available && data.utilities ? data.utilities.mortgage.amount : "");
+			var phone = (data.available && data.utilities ? data.utilities.phone.name : "");
+			var phonecost = (data.available && data.utilities ? data.utilities.phone.amount : "");
+			var insurance = (data.available && data.utilities ? data.utilities.insurance.name : "");
+			var insurancecost = (data.available && data.utilities ? data.utilities.insurance.amount : "");
+			var security = (data.available && data.utilities ? data.utilities.security.name : "");
+			var securitycost = (data.available && data.utilities ? data.utilities.security.amount : "");
+			var electrical = (data.available && data.utilities ? data.utilities.electrical.name : "");
+			var electricalcost = (data.available && data.utilities ? data.utilities.electrical.amount : "");
+			var internet = (data.available && data.utilities ? data.utilities.internet.name : "");
+			var internetcost = (data.available && data.utilities ? data.utilities.internet.amount : "");
 
-
-			if (i % 3 === 0) {
-				rowstart =`<div class="row">`;
-			}
-			else {
-				rowstart=``;
-			}
 
 			content = `
-			<div class="col-xs-6 col-sm-4">
-			  <div class="utilities `+mortgage+`">
-			    <span class="line"></span>
-			    <p>`+mortgage+`</p>
-			    <h5 class="cost" id="`+mortgage+`">`+mortgagecost+`</h5>
-			    <span class="pull-right">
-			      <i class="fas fa-home"></i>
-			    </span>
-			  </div>
-			</div>
-			<div class="col-xs-6 col-sm-4">
-			  <div class="utilities phone">
-			    <span class="line"></span>
-			    <p>Phone</p>
-			    <h5 class="cost" id="phone">196.14</h5>
-			    <span class="pull-right">
-			      <i class="fas fa-phone"></i>
-			    </span>
-			  </div>
-			</div>
-			<div class="col-xs-6 col-sm-4">
-			  <div class="utilities insurance">
-			    <span class="line"></span>
-			    <p>Insurance</p>
-			    <h5 class="cost" id="insurance">152.97</h5>
-			    <span class="pull-right">
-			      <i class="fas fa-shield"></i>
-			    </span>
-			  </div>
-			</div>
-			<div class="col-xs-6 col-sm-4">
-			  <div class="utilities security">
-			    <span class="line"></span>
-			    <p>Security</p>
-			    <h5 class="cost" id="security">55.99</h5>
-			    <span class="pull-right">
-			      <i class="fas fa-lock"></i>
-			    </span>
-			  </div>
-			</div>
-			<div class="col-xs-6 col-sm-4">
-			  <div class="utilities electrical">
-			    <span class="line"></span>
-			    <p>Electrical</p>
-			    <h5 class="cost" id="electrical">149.57</h5>
-			    <span class="pull-right">
-			      <i class="fas fa-bolt"></i>
-			    </span>
-			  </div>
-			</div>
-			<div class="col-xs-6 col-sm-4">
-			  <div class="utilities internet">
-			    <span class="line"></span>
-			    <p>Internet</p>
-			    <h5 class="cost" id="internet">166.53</h5>
-			    <span class="pull-right">
-			      <i class="fas fa-wifi"></i>
-			    </span>
-			  </div>
+			<div class="row">
+				<div class="col-xs-6 col-sm-4">
+				  <div class="utilities `+mortgage+`">
+				    <span class="line"></span>
+				    <p>`+mortgage+`</p>
+				    <h5 class="cost" id="`+mortgage+`">`+mortgagecost+`</h5>
+				    <span class="pull-right">
+				      <i class="fas fa-home"></i>
+				    </span>
+				  </div>
+				</div>
+				<div class="col-xs-6 col-sm-4">
+				  <div class="utilities `+phone+`">
+				    <span class="line"></span>
+				    <p>`+phone+`</p>
+				    <h5 class="cost" id="`+phone+`">`+phonecost+`</h5>
+				    <span class="pull-right">
+				      <i class="fas fa-phone"></i>
+				    </span>
+				  </div>
+				</div>
+				<div class="col-xs-6 col-sm-4">
+				  <div class="utilities `+insurance+`">
+				    <span class="line"></span>
+				    <p>`+insurance+`</p>
+				    <h5 class="cost" id="`+insurance+`">`+insurancecost+`</h5>
+				    <span class="pull-right">
+				      <i class="fas fa-shield"></i>
+				    </span>
+				  </div>
+				</div>
+				<div class="col-xs-6 col-sm-4">
+				  <div class="utilities `+security+`">
+				    <span class="line"></span>
+				    <p>`+security+`</p>
+				    <h5 class="cost" id="`+security+`">`+securitycost+`</h5>
+				    <span class="pull-right">
+				      <i class="fas fa-lock"></i>
+				    </span>
+				  </div>
+				</div>
+				<div class="col-xs-6 col-sm-4">
+				  <div class="utilities `+electrical+`">
+				    <span class="line"></span>
+				    <p>`+electrical+`</p>
+				    <h5 class="cost" id="`+electrical+`">`+electricalcost+`</h5>
+				    <span class="pull-right">
+				      <i class="fas fa-bolt"></i>
+				    </span>
+				  </div>
+				</div>
+				<div class="col-xs-6 col-sm-4">
+				  <div class="utilities `+internet+`">
+				    <span class="line"></span>
+				    <p>`+internet+`</p>
+				    <h5 class="cost" id="`+internet+`">`+internetcost+`</h5>
+				    <span class="pull-right">
+				      <i class="fas fa-wifi"></i>
+				    </span>
+				  </div>
+				</div>
 			</div>
 			`;
 
-			if (i % 3 === 0) {
-				rowend =`</div>`;
-			}
-			else {
-				rowend=``;
-			}
-
-			$('.utility-drop').append(rowstart + content + rowend);
+			$('.utility-drop').append(content);
 		}
 	}
 

@@ -6,13 +6,10 @@ $(function(){
   debt02 = debt02.textContent;
   var debt03 = document.getElementById("debt03");
   debt03 = debt03.textContent;
-  var debt04 = document.getElementById("debt04");
-  debt04 = debt04.textContent;
   $("#debtChart").drawDoughnutChart([
-    { title: "Line of Credit",       value : +debt01,    color: "#5890DC" },
-    { title: "Other",       value:  +debt02,    color: "#f1c40f" },
-    { title: "Credit Card",       value:  +debt03,    color: "#e74c3c" },
-    { title: "Credit Card",       value : +debt04,    color: "#D158B4" }
+    { title: "Credit Card",       value : +debt01,    color: "#429BB8" },
+    { title: "Other",             value:  +debt02,    color: "#8DD0CB" },
+    { title: "Credit Card",       value:  +debt03,    color: "#ED667E" }
   ]);
 });
 /*!

@@ -38,132 +38,21 @@
 <script type="text/javascript" src="controller/storage.js"></script>
 <script type="text/javascript" src="controller/start.js"></script>
 
-<!-- run app -->
+<!-- controller run -->
 <script>
 	var start = new Start(), app = new App();
 	start.init();
 </script>
 
 <!-- functions -->
+<script type="text/javascript" src="assets/js/time.js"></script>
+<script type="text/javascript" src="assets/js/utilities.js"></script>
+<script type="text/javascript" src="assets/js/debts.js"></script>
+<script type="text/javascript" src="assets/js/menu.js"></script>
+<script type="text/javascript" src="assets/js/palette.js"></script>
+
+<!-- functions -->
 <script type="text/javascript">
-
-	function timestamp() {
-		var month = new Array();
-		month[0] = "January";
-		month[1] = "February";
-		month[2] = "March";
-		month[3] = "April";
-		month[4] = "May";
-		month[5] = "June";
-		month[6] = "July";
-		month[7] = "August";
-		month[8] = "September";
-		month[9] = "October";
-		month[10] = "November";
-		month[11] = "December";
-		var d = new Date();
-		var m = month[d.getMonth()];
-		var y = d.getFullYear();
-		document.getElementById("month").innerHTML = m + "<br><small>"+y+"</small>";
-	}
-
-	function total(){
-   var total = 0;
-   $('.cost').each(function(i, obj) {
-    total += parseInt($(this).text());
-   });
-	 line(total);
-	}
-	function line(total) {
-		var average = 0;
-		$('.cost').each(function(i, obj) {
-			average = parseInt($(this).text())/total;
-			// percent of each
-  		// console.log(average*100);
-			if (average*100 > 70) {
-				average = average*100 - 10;
-			} else {
-				average = average*100 + 10;
-			}
-			$(this).siblings('.line').animate({width: average+'%'}, 1500);
-
-    });
-	}
-
-	function debt(){
-   var total = 0;
-   $('.debtTotal').each(function(i, obj) {
-    total += parseInt($(this).text());
-		// console.log(total);
-   });
-	 debtLine(total);
-	}
-	function debtLine(total) {
-		var average = 0;
-		$('.debtTotal').each(function(i, obj) {
-			average = parseInt($(this).text())/total;
-			// percent of each
-  		// console.log(average*100);
-			if (average*100 > 30) {
-				average = average*100 - 10;
-			} else {
-				average = average*100;
-			}
-			$(this).siblings('.line').animate({width: average+'%'}, 1500);
-
-    });
-	}
-
-	function debts(){
-		var debts = document.getElementById("debts-drop");
-		var add = document.getElementById("add-drop");
-		var data = document.getElementById("data-drop");
-		if (document.querySelector("#debts-drop").classList.contains("hidden")) {
-			debts.className = debts.className.replace(/\bhidden\b/g, "open");
-			add.className = add.className.replace(/\bopen\b/g, "hidden");
-			data.className = data.className.replace(/\bopen\b/g, "hidden");
-			$('.chart').empty();
-			debtChart();
-		} else {
-			debts.className = debts.className.replace(/\bopen\b/g, "hidden");
-		}
-	}
-	function add(){
-		var add = document.getElementById("add-drop");
-		var debts = document.getElementById("debts-drop");
-		var data = document.getElementById("data-drop");
-		if (document.querySelector("#add-drop").classList.contains("hidden")) {
-			add.className = add.className.replace(/\bhidden\b/g, "open");
-			debts.className = debts.className.replace(/\bopen\b/g, "hidden");
-			data.className = data.className.replace(/\bopen\b/g, "hidden");
-			$('.chart').empty();
-		} else {
-			add.className = add.className.replace(/\bopen\b/g, "hidden");
-		}
-	}
-	function data(){
-		var data = document.getElementById("data-drop");
-		var add = document.getElementById("add-drop");
-		var debts = document.getElementById("debts-drop");
-		if (document.querySelector("#data-drop").classList.contains("hidden")) {
-			data.className = data.className.replace(/\bhidden\b/g, "open");
-			dataChart();
-			add.className = add.className.replace(/\bopen\b/g, "hidden");
-			debts.className = debts.className.replace(/\bopen\b/g, "hidden");
-		} else {
-			data.className = data.className.replace(/\bopen\b/g, "hidden");
-			$('.chart').empty();
-		}
-	}
-	function palette() {
-		var colorWell = document.querySelector("#palette");
-	  colorWell.addEventListener("input", colorVal, true);
-	}
-	function colorVal(event) {
-		$("#palette").attr('value', event.target.value);
-		$("#color").attr('placeholder', event.target.value);
-		console.log(event.target.value);
-	}
 
 </script>
 
